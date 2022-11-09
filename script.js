@@ -36,7 +36,7 @@ const loadBooks = async () => {
       <img src=${book.img} class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text"> ${book.title} </p>
-        <button href="#" onclick="addBadge(event)" class="btn btn-primary">Add to cart</button>
+        <button href="#" onclick="addBadge(event)" onclick="addToCart(event)" class="btn btn-primary">Add to cart</button>
         <button href="#" onclick="removeCard(event)" class="btn btn-primary">Skip</button>
       </div>
     </div>`;
@@ -46,10 +46,13 @@ const loadBooks = async () => {
     .catch((err) => console.error(err));
 };
 */
+const addToCart = (e) => {
+  let ul = document.querySelector(".list");
+};
 const addBadge = (e) => {
   e.target.closest(
     ".col-3"
-  ).innerHTML += `<span class="badge badge-success p-2">Added to cart!</span>`;
+  ).innerHTML += `<span class="badge badge-success p-3">Added to cart!</span>`;
 };
 const removeCard = (e) => {
   e.target.closest(".col-3").remove();
