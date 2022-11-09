@@ -13,8 +13,8 @@ const loadBooks = async () => {
     let column = document.createElement("div");
     column.className = "col-3";
     column.innerHTML = `<div class="card" style="width: 18rem;">
-    <img src=${book.img} class="card-img-top" alt="...">
-    <div class="card-body">
+    <img src=${book.img} class="card-img-top" style="max-height: 25rem" alt="...">
+    <div class="card-body" style="height: 10rem">
       <p class="card-text"> ${book.title} </p>
       <button href="#" onclick="addBadge(event)" class="btn btn-primary">Add to cart</button>
       <button href="#" onclick="removeCard(event)" class="btn btn-primary">Skip</button>
