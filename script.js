@@ -1,4 +1,29 @@
-const loadBooks = () => {
+const options = {
+  method: "GET",
+};
+const loadBooks = async () => {
+  const response = await fetch(
+    "https://striveschool-api.herokuapp.com/books",
+    options
+  );
+  const books = await response.json();
+
+  let containerRow = document.querySelector(".container .row");
+  books.forEach((book) => {
+    let column = document.createElement("div");
+    column.className = "col-3";
+    column.innerHTML = `<div class="card" style="width: 18rem;">
+    <img src=${book.img} class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text"> ${book.title} </p>
+      <button href="#" onclick="addBadge(event)" class="btn btn-primary">Add to cart</button>
+      <button href="#" onclick="removeCard(event)" class="btn btn-primary">Skip</button>
+    </div>
+  </div>`;
+    containerRow.appendChild(column);
+  });
+};
+/* const loadBooks = () => {
   fetch("https://striveschool-api.herokuapp.com/books")
     .then((response) => response.json())
     .then((booksList) => {
@@ -20,7 +45,7 @@ const loadBooks = () => {
     })
     .catch((err) => console.error(err));
 };
-
+*/
 const addBadge = (e) => {
   e.target.closest(
     ".col-3"
