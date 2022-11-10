@@ -53,11 +53,8 @@ const addToCart = (e) => {
   let li = document.createElement("li");
   li.innerHTML = col.innerHTML;
   ul.appendChild(li);
-  // what i do now ;(
-  // Rebecca best waifu
 };
 
-//Don't need addBadge, just merge with addToCart :)
 // const addBadge = (e) => {
 //     e.target.closest(
 //         ".col-3"
