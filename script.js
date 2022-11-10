@@ -48,6 +48,11 @@ const loadBooks = async () => {
 */
 const addToCart = (e) => {
   let ul = document.querySelector(".list");
+  let li = document.createElement("li");
+  li.innerHTML = e.target.closest("col-3").innerHTML;
+  ul.appendChild(li);
+  // what i do now ;(
+  // Rebecca best waifu
 };
 const addBadge = (e) => {
   e.target.closest(
